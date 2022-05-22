@@ -37,25 +37,29 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text('パスワードポスト'),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
-        ),
+      body: ListView(
+        children: [
+          ListTile(
+            leading: Icon(Icons.vpn_key),
+            title: Text('Amazon'),
+          ),
+          ListTile(
+            leading: Icon(Icons.vpn_key),
+            title: Text('楽天')
+          ),
+          ListTile(
+            leading: Icon(Icons.vpn_key),
+            title: Text('Yahoo!')
+          )
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
@@ -66,8 +70,6 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-// todo ホーム画面のタイトル変更
-// todo リストを表示
 // todo リスト間に区切り線を表示
 // todo リスト表示を同的に
 // todo フローアクションボタンをタップ時に、リストを一つ追加表示

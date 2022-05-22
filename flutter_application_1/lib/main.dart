@@ -37,8 +37,6 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,14 +49,17 @@ class _MyHomePageState extends State<MyHomePage> {
             leading: Icon(Icons.vpn_key),
             title: Text('Amazon'),
           ),
+          Divider(),
           ListTile(
             leading: Icon(Icons.vpn_key),
             title: Text('楽天')
           ),
+          Divider(),
           ListTile(
             leading: Icon(Icons.vpn_key),
             title: Text('Yahoo!')
-          )
+          ),
+          Divider(),
         ],
       ),
       floatingActionButton: FloatingActionButton(

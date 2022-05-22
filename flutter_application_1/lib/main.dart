@@ -29,6 +29,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  List<String> titleList = ['Amazon', '楽天', 'Yahoo!'];
   int _counter = 0;
 
   void _incrementCounter() {
@@ -43,24 +44,19 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text('パスワードポスト'),
       ),
-      body: ListView(
-        children: [
-          ListTile(
-            leading: Icon(Icons.vpn_key),
-            title: Text('Amazon'),
-          ),
-          Divider(),
-          ListTile(
-            leading: Icon(Icons.vpn_key),
-            title: Text('楽天')
-          ),
-          Divider(),
-          ListTile(
-            leading: Icon(Icons.vpn_key),
-            title: Text('Yahoo!')
-          ),
-          Divider(),
-        ],
+      body: ListView.builder(
+        itemCount: titleList.length,
+        itemBuilder: (BuildContext context, int i) {
+          return Column(
+            children: [
+              ListTile(
+                leading: Icon(Icons.vpn_key),
+                title: Text(titleList[i])
+              ),
+              Divider(),
+            ],
+          );
+        }
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,

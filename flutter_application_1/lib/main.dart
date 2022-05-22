@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.green,
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -29,7 +29,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  List<String> titleList = ['Amazon', '楽天', 'Yahoo!'];
+  List<String> titleList = ['Amazon', '楽天', 'Yahoo!', 'Google', 'Apple'];
   int _counter = 0;
 
   void _incrementCounter() {
@@ -59,7 +59,10 @@ class _MyHomePageState extends State<MyHomePage> {
         }
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed: () {
+          titleList.add('Google!!!!!');
+          print(titleList);
+        },
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ),
@@ -67,8 +70,6 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-// todo リスト間に区切り線を表示
-// todo リスト表示を同的に
 // todo フローアクションボタンをタップ時に、リストを一つ追加表示
 // todo 新しい画面を作成し、リストをタップしたときに遷移
 // todo 新しい画面のレイアウトを作成
